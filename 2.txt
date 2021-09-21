@@ -1,0 +1,14 @@
+create table employee(ID int,EmployeeName Varchar(200));
+create table department(ID int,Department varchar(200));
+create table employeeDepartmentMapping(ID int,employeeId int,DepartmentId int);
+
+insert into employee(ID,EmployeeName) values(1,'Employee 1');
+insert into employee(ID,EmployeeName) values(2,'Employee 2');
+insert into employee(ID,EmployeeName) values(3,'Employee 3');
+insert into employee(ID,EmployeeName) values(4,'Employee 4');
+insert into employee(ID,EmployeeName) values(5,'Employee 5');
+insert into employee(ID,EmployeeName) values(6,'Employee 6');
+
+create table studentMaster(Scode int,StudentName varchar(200));
+create table DepartmentMaster(Dcode int, DepartmentName varchar(200));
+create table mapp(ID int, StudentCode int, DeptCode int);
