@@ -1,0 +1,73 @@
+TCL:
+
+create table sample(Id int,text varchar(200));
+insert into sample(Id,text) ValueS(1,'Pritha');
+
+rollback
+
+select * from sample;
+truncate table sample;
+
+insert into sample(Id,text values(2,'Shaheer');
+insert into sample(Id,text values(3,'Swapnil');
+insert into sample(Id,text values(4,'khushi');
+insert into sample(Id,text values(5,'Karuna');
+commit;
+rollback;
+savepoint;
+insert into sample(Id,text values(6,'Sh');
+
+create table employeedetails(salary int,name varchar(200));
+
+insert into employeedetails(salary, name) values(10000, 'abc');
+insert into employeedetails(salary, name) values(100000, 'bcd');
+insert into employeedetails(salary, name) values(40000, 'efg');
+insert into employeedetails(salary, name) values(50000, 'ghi');
+
+select * from employeedetails where salary=(select MAX(salary) from employee);
+
+select * from sample;
+insert into sample(Id,text values(2,'Shaheer');
+insert into sample(Id,text values(3,'Swapnil');
+savepoint ABCD1;
+insert into sample(Id,text values(4,'khushi');
+insert into sample(Id,text values(5,'Karuna');
+savepoint ABCD2;
+insert into sample(Id,text values(6,'Sh');
+rollback ABCD1;
+
+1. 
+create table salesperson(salesman_id int, name varchar(200), city varchar(200), commision Number(2,2));
+
+insert into salesperson(salesman_id,name,city,commision) values(5001,'James Hoog','New york',0.15);
+insert into salesperson(salesman_id,name,city,commision) values(5002,'Nail Knight','Paris',0.13);
+insert into salesperson(salesman_id,name,city,commision) values(5005,'Pit Alex','London',0.11);
+insert into salesperson(salesman_id,name,city,commision) values(5006,'Mc Lyon','Paris',0.14);
+insert into salesperson(salesman_id,name,city,commision) values(5007,'Paul Adam','Rome',0.13);
+insert into salesperson(salesman_id,name,city,commision) values(5003,'Lauson Hen','San jose',0.12);
+
+select city,name from salesperson where salesperson.city='Paris';
+
+2. 
+create table student(year int, subject varchar(200), winner varchar(200), country varchar(200), catagory varchar(200));
+
+insert into student(year,subject,winner,country,catagory) values(1970,'physics','Hannes Alfven','sweden','scientist');
+insert into student(year,subject,winner,country,catagory) values(1970,'physics','Louis Neel','France','scientist');
+insert into student(year,subject,winner,country,catagory) values(1968,'chemistry','luis federico leloir','France','scientist');
+insert into student(year,subject,winner,country,catagory) values(1956,'physiology','ulf von eular','sweden','scientist');
+insert into student(year,subject,winner,country,catagory) values(1967,'physiology','bernard kati','germany','scientist');
+insert into student(year,subject,winner,country,catagory) values(1970,'literature','aleksandr solzhenitsyn','russia','scientist');
+insert into student(year,subject,winner,country,catagory) values(1963,'economics','paul samuelson','usa','scientist');
+insert into student(year,subject,winner,country,catagory) values(1974,'physiology','julius axelrod','usa','scientist');
+insert into student(year,subject,winner,country,catagory) values(1971,'physics','Danial','mexico','scientist');
+
+
+select year,subject,winner,country from student where subject LIKE 'che%' order by year desc;
+
+
+
+
+
+
+
+
